@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title>
+    {% block title %}
+    Button
+    {% endblock %}
+  </title>
+
+  {% block head %}
+  <!-- Bootstrap (tyylitiedosto) -->
+  <link href="{{base_path}}/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{base_path}}/vendor/components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
+  <!-- Oma tyylitiedostomme -->
+  {% endblock %}
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+    <a class="navbar-brand" href="{{base_path}}">Button</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Partners</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav">
+        {% if account_logged_in %}
+        <li class="mr-3"><a href="{{base_path}}/user/{{account_logged_in.id}}" class="deco-none"><span class="fa fa-user"></span> {{account_logged_in.name}}</a></li>
+        <li><a href="{{base_path}}/logout" class="deco-none"><span class="fa fa-sign-out"></span> Log out</a></li>
+        {% else %}
+        <li class="mr-3"><a href="{{base_path}}/register" class="deco-none"><span class="fa fa-user"></span> Register  </a></li>
+        <li><a href="{{base_path}}/login" class="deco-none"><span class="fa fa-sign-in"></span> Log in</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main-container">
+    <!-- Dynaaminen sisältö tulee tähän -->
+    {% block content %}{% endblock %}
+  </div>
+
+  {% block body %}
+  <script src="{{base_path}}/vendor/components/jquery/jquery.min.js"></script>
+  <script src="{{base_path}}/assets/js/popper.min.js"></script>
+
+  <!-- Bootstrap (skriptitiedosto) -->
+  <script src="{{base_path}}/assets/js/bootstrap.min.js"></script>
+  
+  <!-- Oma skriptitiedostomme -->
+  {% endblock %}
+</body>
+</html>

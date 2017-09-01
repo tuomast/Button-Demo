@@ -1,0 +1,23 @@
+{
+    "name": "xbexbex/button",
+    "description": "saving the world",
+    "require": {
+        "slim/slim": "2.*",
+        "components/font-awesome": "^4.7"
+    },
+	"autoload": {
+		"classmap": [
+			"config/database.php",
+			"lib",
+			"app/controllers",
+			"app/models"
+		]
+	},
+    "require-dev": {
+        "twig/twig": "~1.5",
+        "components/jquery": "^3.2",
+        "kint-php/kint": "^2.1",
+        "zeuxisoo/slim-whoops": "0.3.0"
+    },
+    "license": "CC BY-NC-ND 4.0"
+}
