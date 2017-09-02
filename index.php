@@ -11,10 +11,16 @@ if(session_id() == '') {
 
 header('Content-Type: text/html; charset=utf-8');
 
-require 'vendor/autoload.php';
+require '../button/vendor/autoload.php';
 
-$routes = new \Slim\App();
-$routes->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+$c = new \Slim\Container($configuration);
+
+$routes = new \Slim\App($c);
 
 $routes->get('/tietokantayhteys', function(){
 	DB::test_connection();
