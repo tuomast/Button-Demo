@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "26b5facd0ae55ab175c693895f93b05b",
     "content-hash": "c5dc95d6d9a9d5d7360ad1e2b1dd599f",
     "packages": [
         {
@@ -40,7 +39,7 @@
                 "OFL-1.1"
             ],
             "description": "The iconic font designed for use with Twitter Bootstrap.",
-            "time": "2016-10-25 10:56:23"
+            "time": "2016-10-25T10:56:23+00:00"
         },
         {
             "name": "slim/slim",
@@ -87,7 +86,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2017-01-07 12:21:41"
+            "time": "2017-01-07T12:21:41+00:00"
         }
     ],
     "packages-dev": [
@@ -131,7 +130,7 @@
             ],
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
-            "time": "2017-03-21 07:01:49"
+            "time": "2017-03-21T07:01:49+00:00"
         },
         {
             "name": "filp/whoops",
@@ -189,7 +188,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2015-06-29 05:42:04"
+            "time": "2015-06-29T05:42:04+00:00"
         },
         {
             "name": "kint-php/kint",
@@ -247,7 +246,7 @@
                 "kint",
                 "php"
             ],
-            "time": "2017-07-03 20:08:05"
+            "time": "2017-07-03T20:08:05+00:00"
         },
         {
             "name": "twig/twig",
@@ -312,7 +311,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-07-04 13:19:31"
+            "time": "2017-07-04T13:19:31+00:00"
         },
         {
             "name": "zeuxisoo/slim-whoops",
@@ -363,7 +362,7 @@
                 "slim",
                 "whoops"
             ],
-            "time": "2014-11-06 06:47:24"
+            "time": "2014-11-06T06:47:24+00:00"
         }
     ],
     "aliases": [],

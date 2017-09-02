@@ -13,7 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 require 'vendor/autoload.php';
 
-$routes = new \Slim\Slim();
+$routes = new \Slim\App();
 $routes->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
 
 $routes->get('/tietokantayhteys', function(){
