@@ -5,12 +5,9 @@
     private static $use_database = 'psql';
     private static $connection_config = array(
       'psql' => array(
-        'resource' => 'pgsql:'
-      ),
-      'mysql' => array(
-        'resource' => 'mysql:unix_socket=/home/KAYTTAJATUNNUS/mysql/socket;dbname=mysql',
-        'username' => 'root',
-        'password' => 'SALASANA'
+        'resource' => 'pgsql:',
+        'username' => 'ubuntu',
+        'password' => 'ubuntu'
       )
     );
 

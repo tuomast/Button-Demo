@@ -11,7 +11,7 @@ if(session_id() == '') {
 
 header('Content-Type: text/html; charset=utf-8');
 
-require '../button/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 $configuration = [
     'settings' => [

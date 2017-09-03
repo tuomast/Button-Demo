@@ -34,17 +34,48 @@ body {
 	margin-top: 0;
 }
 
+.offset-container {
+	margin: 10rem auto;
+	display: flex;
+	justify-content: center;
+	max-width: 65rem;
+}
+
+.offset-form {
+	margin: auto auto;
+	display: flex;
+	justify-content: center;
+}
+
+.lead-div {
+	bottom: 3rem;
+	margin-top: 34vh;
+	font-family: "Ostrich Sans";
+	font-style: bold;
+	font-weight: 900;
+	font-size:calc(30px + 2.5vw);
+}
 
 .lead-caption {
 	bottom: 3rem;
-	float:left;
+	font-family: "Ostrich Sans";
+	margin-left: 2rem;
+	margin-right: 2rem;
+	font-style: bold;
+	font-weight: 900;
+	font-size:calc(30px + 2.5vw);
 }
 
+.span-color {
+	color:black;
+}
 
-.lead-caption p {
+.lead-text {
 	margin-bottom: 1.25rem;
-	font-size: 1.25rem;
-	line-height: 1.4;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	line-height: 1.2;
+	font-size:40%;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -77,14 +108,14 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing .col {
 	margin-bottom: 1.5rem;
 	text-align: center;
 }
 .marketing h2 {
 	font-weight: normal;
 }
-.marketing .col-lg-4 p {
+.marketing .col p {
 	margin-right: .75rem;
 	margin-left: .75rem;
 }
