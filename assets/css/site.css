@@ -53,11 +53,19 @@ body {
 	justify-content: center;
 }
 
+.offset-border {
+	margin: auto auto;
+	justify-content: center;
+	border-top: 1px solid #ECE6E6;
+	border-bottom: 1px solid #ECE6E6;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
 .offset-form {
 	margin: auto auto;
 	justify-content: center;
-	max-width: 40rem;
-	border: none;
+	max-width: 30em;
 }
 
 .lead-div {s
