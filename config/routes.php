@@ -12,6 +12,15 @@ $routes->get('/login', function() {
   AccountController::login();
 });
 
-$routes->get('/test', function() {
-  AccountController::list();
+$routes->post('/login', function() {
+  AccountController::handle_login();
 });
+
+$routes->get('/signup', function() {
+  AccountController::signup();
+});
+
+$routes->post('/signup', function() {
+  AccountController::store();
+});
+

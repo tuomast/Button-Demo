@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,32 +9,28 @@
   <link rel="icon" href="../../../../favicon.ico">
 
   <title>
-    {% block title %}
-    Button
-    {% endblock %}
+    {% block title %} Button {% endblock %}
   </title>
 
   {% block head %}
-  <!-- Bootstrap (tyylitiedosto) -->
   <link href="{{base_path}}/assets/fonts/ostrich-sans.css" rel="stylesheet">
   <link href="{{base_path}}/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{base_path}}/vendor/components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
-  <!-- Oma tyylitiedostomme -->
-  {% endblock %}
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto+Slab:300" rel="stylesheet">
+  <link href="{{base_path}}/assets/css/site.css" rel="stylesheet"> {% endblock %}
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white md-0 nav-bar" >
-    <a class="navbar-brand" href="{{base_path}}">Button</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white md-0 nav-bar">
+    <a class="navbar-brand" href="{{base_path}}/">Button</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{base_path}}/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Partners</a>
@@ -65,8 +62,9 @@
 
   <!-- Bootstrap (skriptitiedosto) -->
   <script src="{{base_path}}/assets/js/bootstrap.min.js"></script>
-  
+
   <!-- Oma skriptitiedostomme -->
   {% endblock %}
 </body>
+
 </html>

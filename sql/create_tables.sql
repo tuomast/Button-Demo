@@ -4,13 +4,15 @@ CREATE TABLE Account(
 	password varchar(50) NOT NULL,
 	first_name varchar(255),
     last_name varchar(255),
-	phone_number varchar(20)
+	phone_number varchar(20),
+	total_co2_tons_saved numeric(15, 4) DEFAULT 0,
+	total_money_donated numeric(15, 2) DEFAULT 0
 );
 
 CREATE TABLE Payment(
 	id SERIAL PRIMARY KEY,
 	account_id INTEGER REFERENCES Account(id),
-	amount INTEGER,
+	amount numeric(15, 2),
 
 	/* eg. 'monthly' for monthly payment*/
 	recurring varchar(25) DEFAULT 'no',
@@ -24,7 +26,7 @@ CREATE TABLE Achievement(
 	description varchar(1000),
 	logo_url varchar(500),
 
-	/* for achievements with multiple levels. Example: share 5
+	/* for achievements with multiple levels. 5-level example: share 5
 	times on social media to get this achievement*/
 	levels INTEGER DEFAULT 1
 );

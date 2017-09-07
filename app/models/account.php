@@ -27,8 +27,8 @@ class Account extends BaseModel{
 	}
 
 	public static function authenticate($email, $password){
-		$query = DB::connection()->prepare('SELECT * FROM Account WHERE name = :name AND password = :password LIMIT 1');
-		$query->execute(array('name' => $name, 'password' => $password));
+		$query = DB::connection()->prepare('SELECT * FROM Account WHERE email = :email AND password = :password LIMIT 1');
+		$query->execute(array('email' => $email, 'password' => $password));
 		$row = $query->fetch();
 		if($row){
 			$account = new Account(array(
@@ -69,5 +69,14 @@ class Account extends BaseModel{
 		$query->execute(array('email' => $email, 'password' => $password, 'first_name' => $first_name, 'last_name' => $last_name, 'phone_number' => $phone_number));
 		$row = $query->fetch();
 		$this->id = $row['id'];
+	}
+
+	public function errors(){
+		$errors = array(
+			/* stuff for validating the values here
+			*/
+		);
+		$errors = array_filter($errors);
+		return $errors;
 	}
 }

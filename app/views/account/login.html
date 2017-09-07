@@ -1,7 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-
-<h1>Login</h1>
+{% extends "base.html" %} {% block content %}
 
 {% if message %}
 <div class="alert alert-success">
@@ -9,16 +6,20 @@
 </div>
 {% endif %}
 
-<form method="post" action="{{base_path}}/login">
-	<div class="form-group">
-		<label>Email</label>
-		<input type="text" class="form-control" name="name" value="{{email}}">
-	</div>
+<div class="login-div">
+	<h3 class="login-title">Log in or <a href="{{base_path}}/signup"> Sign up</a></h3>
+	<form method="post" action="{{base_path}}/login">
+		<div class="input-group login-field">
+			<span class="input-group-addon login-icon"><i class="fa fa-envelope"></i></span>
+			<input type="text" class="form-control" name="email" placeholder="email" value="{{email}}">
+		</div>
 
-	<div class="form-group">
-		<label>Password</label>
-		<input type="password" class="form-control" name="password">
-	</div>
+		<div class="input-group login-field">
+			<span class="input-group-addon login-icon"><i class="fa fa-lock"></i></span>
+			<input type="password" class="form-control" name="password" placeholder="password">
+		</div>
 
-</form>
+		<button type="submit" class="btn btn-primary login-button">Log in</button>
+	</form>
+</div>
 {% endblock %}

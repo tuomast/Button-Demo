@@ -2,7 +2,7 @@
 echo "Lisätään testidata..."
 
 vagrant ssh -- "
-cd sql
+cd button/sql
 psql < add_test_data.sql
 exit"
 

@@ -25,9 +25,11 @@ class BaseController
     public static function redirect()
     {
         if (isset($_SESSION['account'])) {
-            $redirect_url = $_SESSION['redirect_url'];
-            $_SESSION['redirect_url'] = "";
-            Redirect::to($redirect_url);
+            if ($_SESSION['redirect_url'] != "") {
+                $redirect_url = $_SESSION['redirect_url'];
+                $_SESSION['redirect_url'] = "";
+                Redirect::to($redirect_url);
+            }
         }
     }
 
