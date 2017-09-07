@@ -70,5 +70,4 @@ class Account extends BaseModel{
 		$row = $query->fetch();
 		$this->id = $row['id'];
 	}
-
 }

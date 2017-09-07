@@ -14,17 +14,20 @@ class BaseController
         return null;
     }
 
-    public static function check_logged_in()
+    public static function check_logged_in($redirect_url = "")
     {
         if (!isset($_SESSION['account'])) {
-            Redirect::to('/login', array('message' => 'You need to log in first'));
+            $_SESSION['redirect_url'] = $redirect_url;
+            Redirect::to('/login');
         }
     }
 
-    public static function check_not_logged_in($message)
+    public static function redirect()
     {
         if (isset($_SESSION['account'])) {
-            Redirect::to('/', array('message' => $message));
+            $redirect_url = $_SESSION['redirect_url'];
+            $_SESSION['redirect_url'] = "";
+            Redirect::to($redirect_url);
         }
     }
 

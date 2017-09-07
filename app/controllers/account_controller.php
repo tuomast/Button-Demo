@@ -18,4 +18,8 @@ class AccountController extends BaseController{
 		}
 	}
 
+	public static function login(){
+		View::make('account/login.html');
+	}
+
 }
