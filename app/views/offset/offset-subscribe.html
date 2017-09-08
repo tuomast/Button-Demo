@@ -8,7 +8,8 @@
 </div>
 {% endif %}
 <link href="{{base_path}}/assets/css/slider.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Shadows+Into+Light|Wallpoet" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Shadows+Into+Light|Wallpoet"
+    rel="stylesheet">
 <div class="counter-div d-block">
     <div class="mb-0 d-inline-block">
         <p class="d-inline" id="offset-counter"></p>
@@ -23,7 +24,8 @@
         <div class="offset-text-container">
             <p class="offset-text d-flex justify-content-center mb-4">
                 Carbon dioxide emissions are the leading cause of global warming. As little as 5 euros a month is enough to compensate for
-                the average of 1000kg of monthly emissions you create living your daily life.
+                the average of 1000kg of monthly emissions you create living your daily life. Becoming carbon neutral couldn't
+                be easier than this.
             </p>
             <div class="text-center d-block">
                 <div class="d-block mt-5">
@@ -32,9 +34,14 @@
                     </div>
                 </div>
                 <div class="mt-5">
-                    <span class="h1" id="amount-label">
+                    <div class="d-inline-block">
+                        <span class="h1" id="amount-label">
                                     <span class="pricing__euro">€</span>
-                    </span>
+                        </span>
+                    </div>
+                    <div class="d-inline-block">
+                        <p id="value-flavor">asdf</p>
+                    </div>
                 </div>
             </div>
             <div class="offset-button mt-3">
@@ -135,23 +142,27 @@
 
         var $element = $('input[type="range"]');
         var $handle;
+        var array = {
+            5: "lol",
+            4: "lmao"
+        };
 
         $element.rangeslider({
             polyfill: false,
             onInit: function () {
                 $handle = $('.rangeslider__handle', this.$range);
                 updateHandle($handle[0], this.value);
-                $("#amount-label").html('<span class="pricing__dollar">€</span>' + this.value);
+                $("#amount-label").html(this.value + '<span class="pricing__euro">€</span>');
+                $("#value-flavor").html(array[this.value]);
             }
         }).on('input', function () {
             updateHandle($handle[0], this.value);
-            $("#amount-label").html('<span class="pricing__dollar">€</span>' + this.value);
+            $("#amount-label").html(this.value + '<span class="pricing__euro">€</span>');
+            $("#value-flavor").html(array[this.value]);
         });
 
-        function updateHandle(el, val) {
-            el.textContent = val;
+        function updateHandle(el) {
         }
-
         $('input[type="range"]').rangeslider();
     });
 

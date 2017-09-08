@@ -99,6 +99,7 @@ body {
 
 .ice-div {
 	background-image: url("../img/ice_bot.jpg");
+	background-position: center; 
 	padding-top: 70vh;
 }
 
