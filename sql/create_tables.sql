@@ -39,3 +39,9 @@ CREATE TABLE Achievementaccount(
 	/* when achievement was fully unlocked*/
 	timeachieved timestamptz
 );
+
+CREATE TABLE Globalstats(
+	id SERIAL PRIMARY KEY,
+	name varchar(200),
+	value INTEGER DEFAULT 0
+);

@@ -8,6 +8,6 @@ class DefaultController extends BaseController{
 
 	public static function offset(){
 		parent::check_logged_in("/offset");
-		View::make('offset.html', array('account_logged_in' => self::get_account_logged_in()));
+		View::make('offset/offset-subscribe.html', array('account_logged_in' => self::get_account_logged_in()));
 	}
 }

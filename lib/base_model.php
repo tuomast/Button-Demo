@@ -15,7 +15,7 @@ class BaseModel{
     }
   }
 
-  public function get_time(){
+  public static function get_time(){
     return date("Y:m:d:H:i:s");
   }
 

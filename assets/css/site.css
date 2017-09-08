@@ -1,7 +1,8 @@
 #main-container{
 	max-width: 12rm;
-	padding: 0px 25px 10px 25px;
+	padding: 0px 0px 10px 0px;
 	margin: 0px auto;
+	overflow: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 
 .nav-bar {
 	font-size: 18px;
+	color: black;
 }
 
 .bg-white {
@@ -26,12 +28,52 @@ body {
 	text-decoration: inherit;
 }
 
+.counter-div {
+	margin: 7rem 0 0 0;
+	background-image: url("../img/ice_top.jpg");
+	color:white;
+	text-align: center;
+}
+
+#offset-counter {
+	font-size: 5rem;
+	font-style: bold;
+	margin: auto;
+	display:inline;
+	line-height: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+
+.counter-flavor {
+	font-style: bold;
+	font-size: 2rem;
+}
+
+.counter-text {
+	font-size: 1.3rem;
+	text-align: right;
+}
+
 .offset-container {
-	margin: 10rem auto;
+	margin: 4rem auto;
 	font-size: calc(13px + 0.1em);
 	display: flex;
 	justify-content: center;
-	max-width: 65rem;
+	max-width: 70rem;
+}
+
+.offset-header {
+	text-align: left;
+}
+
+.offset-text-container {
+	display: block;
+	margin: auto auto;
+	max-width: 56rem;
+}
+
+.offset-text {
+	font-size: 150%;
 }
 
 .offset-button {
@@ -55,8 +97,12 @@ body {
 	max-width: 30em;
 }
 
-#buttonDiv {
-	background: #67d667;
+.ice-div {
+	background-image: url("../img/ice_bot.jpg");
+	padding-top: 70vh;
+}
+
+.button-div {
 	height: 96vh;
 	margin-bottom: 1.7rem;
 	overflow:hidden;
@@ -69,17 +115,34 @@ body {
 	margin-top: 0;
 }
 
+.button-background-div {
+	display: flex;
+	overflow: hidden; 
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	max-height: 96vh;
+}
+
 .lead-div {
 	margin-bottom: 3em;
-	margin-top: 34vh;
+	margin-top: 35vh;
+	position: static;
+	z-index: 1;
 	font-size:calc(30px + 2.5vw);
 }
 
 .lead-caption {
+	text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+	color: white;
 	bottom: 3rem;
 	margin-left: 2rem;
 	margin-right: 2rem;
-	font-family: 'Raleway', sans-serif;	
+	font-family: 'Abril Fatface', cursive;
 	font-style: bold;
 	font-size:calc(26px + 2.0vw);
 }
@@ -90,11 +153,18 @@ body {
 
 .lead-text {
 	font-family: 'Roboto Slab', serif;
+	text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+	color: white;
 	margin-bottom: 1.25rem;
 	margin-left: 3rem;
 	margin-right: 3rem;
 	line-height: 1.2;
-	font-size:40%;
+	font-size:50%;
+}
+
+.button-img {
+	width: calc(50px + 3.0vw);
+	min-width: 8rem;
 }
 
 .login-div {
@@ -140,3 +210,4 @@ body {
 .featurette-heading {
 	font-size: 50px;
 }
+
