@@ -75,7 +75,8 @@ class Account extends BaseModel{
 		$errors = array(
 			/* stuff for validating the values here
 			*/
-			'email' => validateEmail($this->email)
+			'email' => validateEmail($this->email),
+			'name' => validateName($this->name)
 
 		);
 		$errors = array_filter($errors);
@@ -87,5 +88,12 @@ class Account extends BaseModel{
 			return null;
 		}
 		return "Email is not valid.";
+	}
+
+	private function validateName($name) {
+		if (preg_match("/^\p{Lu}[\p{L} '&-]*[\p{L}]$/u", $name)) {
+			return null;
+		}
+		return "Name is not valid";
 	}
 }
