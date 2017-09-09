@@ -76,7 +76,8 @@ class Account extends BaseModel{
 			/* stuff for validating the values here
 			*/
 			'email' => validateEmail($this->email),
-			'name' => validateName($this->name)
+			'first_name' => validateName($this->first_name),
+			'last_name' => validateName($this->last_name)
 
 		);
 		$errors = array_filter($errors);
