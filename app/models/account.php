@@ -75,8 +75,17 @@ class Account extends BaseModel{
 		$errors = array(
 			/* stuff for validating the values here
 			*/
+			'email' => validateEmail($this->email)
+
 		);
 		$errors = array_filter($errors);
 		return $errors;
+	}
+
+	private function validateEmail($email) {
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			return null;
+		}
+		return "Email is not valid.";
 	}
 }
