@@ -23,7 +23,7 @@ class AccountController extends BaseController
     public static function login() {
         View::make('account/login.html');
 	}
-	
+
 	public static function signup(){
 		View::make('account/signup.html');
 	}
@@ -36,7 +36,7 @@ class AccountController extends BaseController
             $errors[] = "Passwords do not match";
         }
         $attributes = array(
-            'name' => $params['name'],
+            'email' => $params['email'],
             'password' => $params['password'],
             'admin' => false
             );

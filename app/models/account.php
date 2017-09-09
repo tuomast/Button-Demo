@@ -66,7 +66,7 @@ class Account extends BaseModel{
 
 	public function save(){
 		$query = DB::connection()->prepare('INSERT INTO Account (email, password, first_name, last_name, phone_number) VALUES (:email, :password, :first_name, :last_name, :phone_number) RETURNING id');
-		$query->execute(array('email' => $email, 'password' => $password, 'first_name' => $first_name, 'last_name' => $last_name, 'phone_number' => $phone_number));
+		$query->execute(array('email' => $this->email, 'password' => $this->password, 'first_name' => $this->first_name, 'last_name' => $this->last_name, 'phone_number' => $this->phone_number));
 		$row = $query->fetch();
 		$this->id = $row['id'];
 	}

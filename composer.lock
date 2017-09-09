@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "fd0cc433c3a8046ab5be4b5711c539fa",
     "content-hash": "e91d2dabc532bdec3f38814f2663c0e2",
     "packages": [
         {
@@ -39,7 +40,7 @@
                 "OFL-1.1"
             ],
             "description": "The iconic font designed for use with Twitter Bootstrap.",
-            "time": "2016-10-25T10:56:23+00:00"
+            "time": "2016-10-25 10:56:23"
         },
         {
             "name": "container-interop/container-interop",
@@ -70,7 +71,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14T19:40:03+00:00"
+            "time": "2017-02-14 19:40:03"
         },
         {
             "name": "nikic/fast-route",
@@ -113,7 +114,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2017-01-19T11:35:12+00:00"
+            "time": "2017-01-19 11:35:12"
         },
         {
             "name": "pimple/pimple",
@@ -163,7 +164,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-23T07:32:15+00:00"
+            "time": "2017-07-23 07:32:15"
         },
         {
             "name": "psr/container",
@@ -212,7 +213,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/http-message",
@@ -262,7 +263,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06T14:39:51+00:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "slim/slim",
@@ -333,7 +334,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2017-03-19T17:55:20+00:00"
+            "time": "2017-03-19 17:55:20"
         },
         {
             "name": "stripe/stripe-php",
@@ -388,7 +389,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2017-08-29T12:47:40+00:00"
+            "time": "2017-08-29 12:47:40"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -447,7 +448,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14T15:44:48+00:00"
+            "time": "2017-06-14 15:44:48"
         },
         {
             "name": "twig/twig",
@@ -513,220 +514,10 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07T18:47:58+00:00"
+            "time": "2017-06-07 18:47:58"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "components/jquery",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jquery.git",
-                "reference": "e5534d4ab8e80c159553d507e358ed20a806d3bf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/e5534d4ab8e80c159553d507e358ed20a806d3bf",
-                "reference": "e5534d4ab8e80c159553d507e358ed20a806d3bf",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "jquery.js"
-                    ],
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery.slim.js",
-                        "jquery.slim.min.js",
-                        "jquery.slim.min.map"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "JS Foundation and other contributors"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "time": "2017-03-21T07:01:49+00:00"
-        },
-        {
-            "name": "filp/whoops",
-            "version": "1.1.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "72538eeb70bbfb11964412a3d098d109efd012f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/72538eeb70bbfb11964412a3d098d109efd012f7",
-                "reference": "72538eeb70bbfb11964412a3d098d109efd012f7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Whoops": "src/"
-                },
-                "classmap": [
-                    "src/deprecated"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://github.com/filp/whoops",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "silex-provider",
-                "whoops",
-                "zf2"
-            ],
-            "time": "2015-06-29T05:42:04+00:00"
-        },
-        {
-            "name": "kint-php/kint",
-            "version": "2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kint-php/kint.git",
-                "reference": "1a1104729f10277b06d7db742d3c98d1881d4d7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kint-php/kint/zipball/1a1104729f10277b06d7db742d3c98d1881d4d7e",
-                "reference": "1a1104729f10277b06d7db742d3c98d1881d4d7e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.1.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "phpunit/phpunit": "^4.0",
-                "symfony/finder": "^2.6"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "init.php"
-                ],
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rokas Šleinius",
-                    "homepage": "https://github.com/raveren"
-                },
-                {
-                    "name": "Jonathan Vollebregt",
-                    "homepage": "https://github.com/jnvsor"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/kint-php/kint/graphs/contributors"
-                }
-            ],
-            "description": "Kint - debugging tool for PHP developers",
-            "homepage": "https://kint-php.github.io/kint/",
-            "keywords": [
-                "debug",
-                "kint",
-                "php"
-            ],
-            "time": "2017-07-03T20:08:05+00:00"
-        },
-        {
-            "name": "zeuxisoo/slim-whoops",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zeuxisoo/php-slim-whoops.git",
-                "reference": "da0250b0d1211bd90c5ab7e8cf7c3925e8376095"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zeuxisoo/php-slim-whoops/zipball/da0250b0d1211bd90c5ab7e8cf7c3925e8376095",
-                "reference": "da0250b0d1211bd90c5ab7e8cf7c3925e8376095",
-                "shasum": ""
-            },
-            "require": {
-                "filp/whoops": "1.*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "filp/whoops": "1.*",
-                "phpunit/phpunit": "3.7.*@dev",
-                "slim/slim": "2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Zeuxisoo\\Whoops\\Provider\\Slim\\WhoopsMiddleware": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Zeuxis Lo",
-                    "email": "seekstudio@gmail.com",
-                    "homepage": "http://www.chair.im/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP whoops error on slim framework",
-            "homepage": "https://github.com/zeuxisoo/php-slim-whoops/",
-            "keywords": [
-                "error",
-                "exception",
-                "slim",
-                "whoops"
-            ],
-            "time": "2014-11-06T06:47:24+00:00"
-        }
-    ],
+    "packages-dev": null,
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

@@ -8,5 +8,4 @@ $baseDir = dirname($vendorDir);
 return array(
     '253c157292f75eb38082b5acb06f3f01' => $vendorDir . '/nikic/fast-route/src/functions.php',
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
-    '3917c79c5052b270641b5a200963dbc2' => $vendorDir . '/kint-php/kint/init.php',
 );
