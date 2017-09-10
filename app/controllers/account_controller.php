@@ -38,6 +38,8 @@ class AccountController extends BaseController
         $attributes = array(
             'email' => $params['email'],
             'password' => $params['password'],
+            'first_name' => $params['first_name'],
+            'last_name' => $params['last_name'],
             'admin' => false
             );
         $account = new Account($attributes);
