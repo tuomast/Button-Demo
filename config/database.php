@@ -6,7 +6,7 @@
     private static $connection_config = array(
       'psql' => array(
         'resource' => 'pgsql:',
-        'username' => 'postgres',
+        'username' => 'xbexbex',
         'password' => 'postgres'
       )
     );
