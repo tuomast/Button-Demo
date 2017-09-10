@@ -10,14 +10,14 @@
 <link href="{{base_path}}/assets/css/slider.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Shadows+Into+Light|Wallpoet"
     rel="stylesheet">
-    
+
 <div class="offset-div">
     <div class="offset-background d-block"></div>
     <div class="offset-container d-block">
         <div class="offset-top"></div>
         <div class="counter-div d-block">
             <div class="mb-0 d-inline-block">
-                    <b>
+                <b>
                 <p class="d-inline" id="offset-counter"></p>
             </b>
                 <h4 class="d-inline counter-flavor"><b>Tons</b></h4>
@@ -28,55 +28,43 @@
             <div class="offset-content">
                 <div class="offset-header">
                     <h1 class="mb-2 mt-5">Offset your life. </h1>
-                    <h2 id="fadein-text" class="text-muted text-small d-inline-block mt-0 ml-5 mb-2">&nbsp;</h2>
+                    <h2 id="fadein-text" class="text-muted text-small d-inline-block mt-0 ml-lg-4 mb-2 pl-3">&nbsp;</h2>
                 </div>
-                <div class="offset-text-container">
+                <div class="offset-text-container pl-4 pr-1">
                     <p class="offset-text d-inline mb-4">
                         Carbon dioxide emissions are the leading cause of global warming. As little as <b>5 euros</b> a month
                         is enough to compensate for the average of <b>1000kg</b> of monthly emissions you create living your
                         daily life. <em>Being able to say you are 100% carbon neutral couldn't
                 be easier than this.</em>
                     </p>
-                    <div class="text-center d-block">
-                        <div class="d-block mt-5">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <input id="range-slider" type="range" min="1" max="50" step="1" value="5">
-                            </div>
+                </div>
+                <div class="text-center d-block">
+                    <div class="d-block mt-5 ml-2 mr-2">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <input id="range-slider" type="range" min="1" max="50" step="1" value="5">
                         </div>
-                        <div class="mt-5">
-                            <div class="d-inline-block">
-                                <span class="h1" id="amount-label">
-                                    <span class="pricing__euro">€</span>
+                    </div>
+                    <div class="argh m-auto">
+                        <div class="row slider-values mt-4 pl-3 pr-3 mb-5 justify-content-between">
+                            <div class="col-xs-auto slider-mini pt-4">
+                                <p class="value-title"><em>The price of:</em></p>
+                                <span class="h1 text-right">
+                                    <span class="text-small value-month"  id="value-flavor"></span>
                                 </span>
                             </div>
-                            <div class="d-inline-block">
-                                <p id="value-flavor">asdf</p>
+                            <div class="col-xs-auto slider-mini pt-4">
+                                <span class="h1 text-right full-price" id="amount-label">5€
+                                    <span class="text-small text-muted value-month">/month</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="offset-button mt-3">
-                        <button class="btn btn-primary mb-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                            aria-controls="collapseExample">
-                    Subscribe with Stripe
-                </button>
-                    </div>
-                    <div class="collapse offset-border" id="collapseExample">
-                        <form class="offset-form">
-                            <div class="row">
-                                <div class="col mr-1">
-                                    <input type="text" class="form-control" placeholder="First name">
-                                </div>
-                                <div class="col ml-1">
-                                    <input type="text" class="form-control" placeholder="Last name">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                </div>
+                <hr>
+                <div class="offset-button mt-5">
+                    <a href="{{base_path}}/offset/complete">
+                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-pill-paypalcheckout-60px.png" alt="PayPal Checkout">
+                    </a>
                 </div>
             </div>
         </div>
@@ -101,24 +89,60 @@
 
         var $element = $('input[type="range"]');
         var $handle;
-        var array = {
-            5: "lol",
-            4: "lmao"
+        var flavor_array = {
+            1: "a cup of coffee",
+            2: "a bottle of soda",
+            3: "a bag of cashew nuts",
+            4: "a medium sized burger",
+            5: "a straight-to-dvd movie",
+            6: "a pair of flip-flops",
+            7: "one of those romance paperbacks",
+            10: "a movie ticket",
+            15: "a bad pair of earphones",
+            20: "a lunch for two",
+            25: "a longer than average taxi trip",
+            30: "4 milligrams of diamonds",
+            40: "a very big bag of tomatoes",
+            50: "a video game",
+            100: "a night of bar-hopping"
         };
+        var timer = null;
+        var index = 5;
 
         $element.rangeslider({
             polyfill: false,
             onInit: function () {
                 $handle = $('.rangeslider__handle', this.$range);
                 updateHandle($handle[0], this.value);
-                $("#amount-label").html(this.value + '<span class="pricing__euro">€</span>');
-                $("#value-flavor").html(array[this.value]);
+                $("#amount-label").html(this.value + "€" + '<span class="text-small text-muted value-month">/month</span>');
+                $("#value-flavor").html(flavor_array[this.value]);
             }
         }).on('input', function () {
             updateHandle($handle[0], this.value);
-            $("#amount-label").html(this.value + '<span class="pricing__euro">€</span>');
-            $("#value-flavor").html(array[this.value]);
-        });
+            index = this.value;
+            $("#amount-label").html(this.value + "€" + '<span class="text-small text-muted value-month">/month</span>');
+            clearTimeout(timer);
+            timer = setTimeout(
+                function () {
+                    $("#value-flavor").html(function () {
+                        var prev = 1;
+                        for (i in flavor_array) {
+                            var n = parseInt(i);
+                            if (index == n) {
+                                return flavor_array[n];
+                            } else if (index < n) {
+                                if ((index - prev) < (n - index)) {
+                                    return flavor_array[prev];
+                                } else {
+                                    return flavor_array[n];
+                                }
+                            } else {
+                                prev = n;
+                            }
+                        }
+                    });
+                }, 700);
+        })
 
         function updateHandle(el) {
         }
