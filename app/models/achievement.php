@@ -25,6 +25,24 @@ class achievement extends BaseModel{
 		return $achievements;
 	}
 
+  public static function find($id){
+		$query = DB::connection()->prepare('SELECT * FROM Achievement WHERE id = :id LIMIT 1');
+		$query->execute(array('id' => $id));
+		$row = $query->fetch();
+		if($row){
+			$achievement = new Achievement(array(
+				'id' => $row['id'],
+				'name' => $row['name'],
+				'description' => $row['description'],
+				'logo_url' => $row['logo_url'],
+				'levels' => $row['levels']
+				));
+			return $achievement;
+		}else{
+			return null;
+		}
+	}
+
 }
 
 
