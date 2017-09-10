@@ -2,17 +2,13 @@
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	overflow:hidden;
-	display:block;
 }
 
 body {
 	font-family: 'Roboto Slab', serif;
-	margin-top: 1px;
 	color: #5a5a5a;
 	font-size:14px;
-	overflow:auto;
-	margin-bottom: 1px;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 .nav-bar {
@@ -30,39 +26,44 @@ body {
 }
 
 .offset-div {
-	overflow-y: auto;
+	overflow-y: scroll;
 	overflow-x: hidden;
+	justify-content: center;
+	text-align: center;
 	position:absolute;
+	margin:auto;
+	perspective: 1px;
+	top:0;
 	left:0;
 	right:0;
-	top:0;
-	bottom:0;
-	perspective: 1px;
 }
 
 .offset-background {
-	background-image: url("../img/ice.jpeg");
-	transform: translateZ(-2px) scale(3);
-	height: 100%;
-	position:absolute;
-	font-size: 0;
+	transform: translateZ(-1px) scale(2);
+	width: 100vw;
+	height: 100vh;
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom:0;
-	margin-left: -6px;
-	margin-right: -6px;
-	margin-bottom: 0px;
-	line-height:0;
-	background-position: bottom center;
+	background-image: url("../img/ice.jpeg");
+	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
 
+.offset-top {
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+	height: 10rem;
+	margin-bottom: 1rem;
+}
+
 .counter-div {
-	margin: 7rem 0 0 0;
-	color:black;
+	margin: 0 0 0 0;
+	color:rgb(255, 255, 255);
 	text-align: center;
 }
 
@@ -146,20 +147,17 @@ body {
 }
 
 .button-div {
-	margin-bottom: 1.7rem;
-	overflow-y: auto;
+	overflow-y: scroll;
 	overflow-x: hidden;
 	justify-content: center;
 	text-align: center;
 	position:absolute;
 	margin:auto;
-	margin-top: 0;
-	display:block;
 	perspective: 1px;
-	bottom:0;
 	top:0;
 	left:0;
 	right:0;
+	padding-top: 1px;
 }
 
 .button-background-div {
