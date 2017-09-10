@@ -27,8 +27,8 @@ class Account extends BaseModel{
 	}
 
 	public static function authenticate($email, $password){
-		$query = DB::connection()->prepare('SELECT * FROM Account WHERE email = :email AND password = :password LIMIT 1');
-		$query->execute(array('email' => $email, 'password' => $password));
+		$query = DB::connection()->prepare('SELECT * FROM Account WHERE email = :email LIMIT 1');
+		$query->execute(array('email' => $email));
 		$row = $query->fetch();
 		if($row){
 			$account = new Account(array(
@@ -39,10 +39,11 @@ class Account extends BaseModel{
 				'last_name' => $row['last_name'],
 				'phone_number' => $row['phone_number']
 				));
+			if ($account->checkPassword($password, $account)) {
 			return $account;
-		}else{
-			return null;
+			}
 		}
+		return null;
 	}
 
 	public static function find($id){
@@ -75,9 +76,9 @@ class Account extends BaseModel{
 		$errors = array(
 			/* stuff for validating the values here
 			*/
-			'email' => validateEmail($this->email),
-			'first_name' => validateName($this->first_name),
-			'last_name' => validateName($this->last_name)
+			'email' => $this->validateEmail($this->email),
+			'first_name' => $this->validateName($this->first_name),
+			'last_name' => $this->validateName($this->last_name)
 
 		);
 		$errors = array_filter($errors);
@@ -96,5 +97,24 @@ class Account extends BaseModel{
 			return null;
 		}
 		return "Name is not valid";
+	}
+	private function checkPassword($password, $account) {
+		$hash = $account->password;
+		// Verify stored hash against plain-text password
+		if (password_verify($password, $hash)) {
+    // Check if a newer hashing algorithm is available
+    // or the cost has changed
+    	if (password_needs_rehash($hash, PASSWORD_DEFAULT)) {
+        // If so, create a new hash, and replace the old one
+        $newHash = password_hash($password, PASSWORD_DEFAULT);
+				$query = DB::connection()->prepare('UPDATE Account SET password = :password WHERE id = :id');
+				$query->execute(array('password' => $newHash, 'id' => $account->id));
+
+    	}
+
+    // Log user in
+			return true;
+		}
+		return false;
 	}
 }

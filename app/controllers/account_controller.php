@@ -32,12 +32,17 @@ class AccountController extends BaseController
     public static function store() {
         $params = $_POST;
         $errors = [];
+        if (strlen($params['password']) < 3) {
+          $errors[] = "Password is too short";
+        }
         if ($params['password'] != $params['password2']) {
             $errors[] = "Passwords do not match";
         }
         $attributes = array(
             'email' => $params['email'],
-            'password' => $params['password'],
+            'password' => password_hash($params['password'], PASSWORD_DEFAULT),
+            'first_name' => $params['first_name'],
+            'last_name' => $params['last_name'],
             'admin' => false
             );
         $account = new Account($attributes);
@@ -51,4 +56,5 @@ class AccountController extends BaseController
             View::make('account/account_add.html', array('errors' => $errors, 'attributes' => $attributes));
         }
     }
+
 }
