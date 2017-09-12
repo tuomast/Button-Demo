@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width">
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
@@ -13,22 +13,22 @@
   </title>
 
   {% block head %}
-  <link href="{{base_path}}/assets/fonts/ostrich-sans.css" rel="stylesheet">
   <link href="{{base_path}}/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{base_path}}/vendor/components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto+Slab:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-  <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
-  {% endblock %}
+  <link href="{{base_path}}/assets/css/site.css" rel="stylesheet"> {% endblock %}
 </head>
 
 <body mb-0 pb-0>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white md-0 nav-bar">
+  {% block navbar %}
+  <nav class="navbar navbar-expand-md navbar-light fixed-top md-0 nav-bar-light">
+  {% endblock %}
     <a class="navbar-brand" href="{{base_path}}/">Button</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -41,16 +41,16 @@
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{base_path}}/offset">Offset</a>
-          </li>
+          <a class="nav-link" href="{{base_path}}/offset">Offset</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav">
         {% if account_logged_in %}
-        <li class="mr-3"><a href="{{base_path}}/user/profile" class="deco-none"><span class="fa fa-user"></span> {{account_logged_in.name}}</a></li>
-        <li><a href="{{base_path}}/logout" class="deco-none"><span class="fa fa-sign-out"></span> Log out</a></li>
+        <li class="nav-item mr-3"><a class="nav-link navbar-deco" href="{{base_path}}/user/profile"><span class="fa fa-user"></span> {{account_logged_in.email}}</a></li>
+        <li class="nav-item mr-3"><a class="nav-link navbar-deco" href="{{base_path}}/logout" class="deco-none"><span class="fa fa-sign-out"></span> Log out</a></li>
         {% else %}
-        <li class="mr-3"><a href="{{base_path}}/signup" class="deco-none"><span class="fa fa-user"></span> Register  </a></li>
-        <li><a href="{{base_path}}/login" class="deco-none"><span class="fa fa-sign-in"></span> Log in</a></li>
+        <li class="nav-item mr-3"><a class="nav-link navbar-deco" href="{{base_path}}/signup" class="deco-none"><span class="fa fa-user"></span> Register  </a></li>
+        <li class="nav-item mr-3"><a class="nav-link navbar-deco" href="{{base_path}}/login" class="deco-none"><span class="fa fa-sign-in"></span> Log in</a></li>
         {% endif %}
       </ul>
     </div>
