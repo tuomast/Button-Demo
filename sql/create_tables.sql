@@ -1,9 +1,9 @@
 CREATE TABLE Account(
 	id SERIAL PRIMARY KEY,
-  email varchar(255) NOT NULL,
+  	email varchar(255) NOT NULL,
 	password varchar(255) NOT NULL,
 	first_name varchar(255),
-  last_name varchar(255),
+  	last_name varchar(255),
 	phone_number varchar(20),
 	total_co2_tons_saved numeric(15, 4) DEFAULT 0,
 	total_money_donated numeric(15, 2) DEFAULT 0

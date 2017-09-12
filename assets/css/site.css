@@ -286,8 +286,10 @@ body {
 }
 
 .button-img {
-	width: calc(50px + 5.0vw);
+	width: calc(50px + 8.0vw);
+	margin-top: 3rem;
 	min-width: 8rem;
+
 }
 
 .login-div {
@@ -340,12 +342,36 @@ body {
 
 @media screen and (orientation:portrait) {
 	.lead-div {
-		top: 10rem;
+		top: 7rem;
+	}
+}
+
+@media screen and (orientation:portrait) and (max-height: 650px) {
+	.lead-div {
+		top: 4rem;
 	}
 }
 
 @media screen and (orientation:landscape) {
 	.lead-div {
-		top: 30vh;
+		top: 25vh;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-height: 200px) {
+	.lead-div {
+		top: 12rem;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-height: 600px) {
+	.lead-div {
+		top: 15vh;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-height: 800px) {
+	.lead-div {
+		top: 10vh;
 	}
 }

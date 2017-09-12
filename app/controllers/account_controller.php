@@ -51,9 +51,10 @@ class AccountController extends BaseController
             $account->save();
             $account = Account::authenticate($account->name, $account->password);
             $_SESSION['account'] = $account->id;
-            Redirect::to('/', array('message' => 'Your account has been created!', 'account_logged_in' => $account));
+            self::redirect();
+            Redirect::to('/', array('account_logged_in' => $account));
         } else {
-            View::make('account/account_add.html', array('errors' => $errors, 'attributes' => $attributes));
+            View::make('account/signup', array('errors' => $errors, 'attributes' => $attributes));
         }
     }
 
