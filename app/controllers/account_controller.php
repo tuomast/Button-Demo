@@ -54,7 +54,7 @@ class AccountController extends BaseController
             self::redirect();
             Redirect::to('/', array('account_logged_in' => $account));
         } else {
-            View::make('account/signup', array('errors' => $errors, 'attributes' => $attributes));
+            View::make('account/signup.html', array('errors' => $errors, 'attributes' => $attributes));
         }
     }
 
