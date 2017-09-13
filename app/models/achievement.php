@@ -39,7 +39,7 @@ class achievement extends BaseModel{
 				));
 			return $achievement;
 		}else{
-			return null;
+			rfeturn null;
 		}
 	}
 //EI TESTATTU
@@ -70,6 +70,10 @@ class achievement extends BaseModel{
   public static function addAchievement($name, $description, $logo_url, $levels) {
     $query = DB:connection()->prepare('INSERT INTO Achievement VALUES(:name, :description, :logo_url, :levels)');
     $query->execute(array('name') => $name, 'description' => $description, 'logo_url' => $logo_url, 'levels' => $levels);
+  }
+
+  public static function addLevel() {
+    $this->current_level++;
   }
 
 }
