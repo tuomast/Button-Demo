@@ -2,7 +2,7 @@
 
 class achievement extends BaseModel{
 
-  public $id, $name, $description, $logo_url, $levels;
+  public $id, $name, $description, $logo_url, $levels, $current_level;
 
   public function __construct($attributes){
 		parent::__construct($attributes);
@@ -42,6 +42,29 @@ class achievement extends BaseModel{
 			return null;
 		}
 	}
+//EI TESTATTU
+  public static function findByUser($id) {
+    $query = DB:connection()->prepare('
+      SELECT Achievement.id, Achievement.name, Achievement.description, Achievement.logo_url, Achievement.levels, Achievementaccount.current_level
+      FROM Achievemen
+      INNER JOIN Achievementaccount ON Achievement.id = Achievementaccount.achievement_id
+      WHERE Achievementaccount.account_id = :id');
+    $query->execute(array('id' => $id));
+    $rows = $query->fetchAll();
+    $achievements = array();
+    foreach($rows as $row) {
+      $achievements[] = new Achievement(array(
+        'id' => $row['id'],
+        'name' => $row['name'],
+        'description' => $row['description'],
+        'logo_url' => $row['logo_url'],
+        'levels' => $row['levels'],
+        'current_level' => $row['current_level']
+      ));
+    }
+    return $achievements[];
+
+  }
 
 
   public static function addAchievement($name, $description, $logo_url, $levels) {
