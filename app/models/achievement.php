@@ -46,7 +46,7 @@ class achievement extends BaseModel{
   public static function findByUser($id) {
     $query = DB:connection()->prepare('
       SELECT Achievement.id, Achievement.name, Achievement.description, Achievement.logo_url, Achievement.levels, Achievementaccount.current_level
-      FROM Achievemen
+      FROM Achievement
       INNER JOIN Achievementaccount ON Achievement.id = Achievementaccount.achievement_id
       WHERE Achievementaccount.account_id = :id');
     $query->execute(array('id' => $id));
