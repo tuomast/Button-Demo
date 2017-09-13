@@ -13,7 +13,7 @@
 
 <div class="offset-div">
     <div class="offset-layer-group">
-        <div class="offset-background d-block"></div>
+        <div class="offset-background"></div>
         <div class="offset-container" id="height-set">
             <div class="offset-top"></div>
             <div class="counter-div d-block">
@@ -29,7 +29,7 @@
                 <div class="offset-content">
                     <div class="offset-header">
                         <h1 class="mb-2 mt-5">Offset your life. </h1>
-                        <h2 id="fadein-text" class="text-muted text-small d-inline-block mt-0 ml-lg-4 mb-2 pl-3">&nbsp;</h2>
+                        <h2 id="fadein-text" class="text-muted text-small d-inline-block mt-0 ml-lg-5 mb-2 pl-3">&nbsp;</h2>
                     </div>
                     <div class="offset-text-container pl-4 pr-4 pb-5 mb-5 text-justify">
                         <p class="offset-text d-inline mb-4">
@@ -62,10 +62,12 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="offset-button mt-5">
-                        <a href="{{base_path}}/offset/complete">
-                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-pill-paypalcheckout-60px.png" alt="PayPal Checkout">
-                    </a>
+                    <div class="offset-button mt-5 text-center">
+                        <form action="{{base_path}}/offset/complete" method="post">
+                            <input id="demo-spaghetti" class="d-none" type="text" name="amount" value="lol"></input>
+                            <input type="image" value="Submit" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-pill-paypalcheckout-60px.png"
+                                alt="PayPal Checkout"/>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -89,7 +91,7 @@
     $(document).ready(function () {
         $("#fadein-text").text("Know you have made a difference.").hide().fadeIn(5000);
 
-
+        // For slider and flavor text under it
         var $element = $('input[type="range"]');
         var $handle;
         var flavor_array = {
@@ -111,22 +113,27 @@
         };
         var timer = null;
         var index = 5;
+
+        // Fixing the background height
+        $(".offset-background").height($(".offset-container").prop('scrollHeight'));
         setInterval(function () {
-            $(".offset-background").height($(".offset-container").height() * 1.2);
-            $(".offset-div").height($(".offset-background").height());
-        }, 99999);
+            $(".offset-background").height($(".offset-container").prop('scrollHeight'));
+        }, 1000);
+
         $element.rangeslider({
             polyfill: false,
             onInit: function () {
                 $handle = $('.rangeslider__handle', this.$range);
                 updateHandle($handle[0], this.value);
                 $("#amount-label").html(this.value + "€" + '<span class="text-small text-muted value-month">/month</span>');
-                $("#value-flavor").html(flavor_array[this.value]);
+                $("#value-flavor").val(flavor_array[this.value]);
+                $("#demo-spaghetti").val(this.value);
             }
         }).on('input', function () {
             updateHandle($handle[0], this.value);
             index = this.value;
             $("#amount-label").html(this.value + "€" + '<span class="text-small text-muted value-month">/month</span>');
+            $("#demo-spaghetti").val(this.value);
             clearTimeout(timer);
             timer = setTimeout(
                 function () {

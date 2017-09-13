@@ -1,14 +1,7 @@
 {% extends "base.html" %} {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark fixed-top md-0 nav-bar-dark">
-	{% endblock %} {% block content %} {% if message %}
-	<div class="alert alert-success">
-		{{message}}
-	</div>
-	{% endif %} {% if messagebad %}
-	<div class="alert alert-danger">
-		{{messagebad}}
-	</div>
-	{% endif %}
+		<a class="navbar-brand" href="{{base_path}}/offset"><img class="button-logo" src="{{base_path}}/assets/img/button_inverted_logo_inverted.svg"></a>  
+	{% endblock %} {% block content %}
 
 	<div class="button-div">
 		<div class="button-layer-group">
@@ -24,81 +17,61 @@
 							<h1 id="fade-text" class="lead-caption pl-2 d-block">Kills 300.000 People This Year</h1>
 						</div>
 					</div>
-					<p class="lead-text"><b>You can stop that with a few clicks and some pocket change.</b></p>
+					<p class="lead-text"><b>You can stop that by pushing the Button.</b></p>
 				</div>
 				<div class="button-img-div d-inline-block">
 					<a href="{{base_path}}/offset">
-				<img class="button-img" src="{{base_path}}/assets/img/button.svg"></img>
+				<img class="button-img" src="{{base_path}}/assets/img/button_inverted.svg"></img>
 			</a>
 				</div>
 			</div>
 		</div>
 
-
+		<div class="whitespace-group">
+			<div class="whitespace-background-div">
+			</div>
+		</div>
 
 
 
 		<div class="information-group">
-			<div class="information-div"> 
-				<hr class="featurette-divider">
-
+			<div class="information-background-div">
+			</div>
+			<div class="information-div">
 				<div class="row featurette">
-					<div class="col-md-7">
-						<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-						<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-					<div class="col-md-5">
-						<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					<div class="col-md-7 information-bit">
+						<span class="information-highlight"><h2 class="featurette-heading mt-2">Global Warming. <span class="featurette-heading-off">Inevitable.</span></h2>
+						</span>
+						<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
+							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
 					</div>
 				</div>
 
-				<hr class="featurette-divider">
+				<div class="featurette-divider">
 
-				<div class="row featurette">
-					<div class="col-md-7 order-md-2">
-						<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-						<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-					<div class="col-md-5 order-md-1">
-						<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+				<div class="row featurette justify-content-end">
+					<div class="col-md-7 information-bit">
+						<span class="information-highlight"><h2 class="featurette-heading mt-2">How do we stop it? <span class="featurette-heading-off">Just push the Button.</span></h2>
+						</span>
+						<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
+							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
 					</div>
 				</div>
 
-				<hr class="featurette-divider">
+				<div class="featurette-divider">
 
 				<div class="row featurette">
-					<div class="col-md-7">
-						<h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-						<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-					<div class="col-md-5">
-						<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					<div class="col-md-7 information-bit">
+							<span class="information-highlight"><h2 class="featurette-heading mt-2">And lastly, this one. <span class="featurette-heading-off">Checkmate.</span></h2></span>
+							<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
+							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
 					</div>
 				</div>
-
-				<hr class="featurette-divider">
 			</div>
 		</div>
 	</div>
 
-	<!-- START THE FEATURETTES -->
-
-
-
-	<!-- /END THE FEATURETTES -->
-
-
-	<!-- FOOTER -->
-	<footer>
-		<p class="float-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</footer>
-
 	</div>
-	<!-- /.container -->
 	<script src="{{base_path}}/vendor/components/jquery/jquery.min.js"></script>
 	<script>
 		$(document).ready(function () {
@@ -110,6 +83,12 @@
 			];
 			var selector = 0;
 			var text_fader;
+
+			$(".information-background-div").height($(".information-div").prop('scrollHeight'));
+			setInterval(function () {
+				$(".information-background-div").height($(".information-div").prop('scrollHeight'));
+			}, 1000);
+
 			$(function startFader() {
 				text_fader = setInterval(function () {
 					selector++;

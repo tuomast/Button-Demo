@@ -24,3 +24,7 @@ $routes->post('/signup', function() {
   AccountController::store();
 });
 
+$routes->post('/offset/complete', function() {
+  DefaultController::offset_complete();
+});
+

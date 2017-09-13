@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../manifest.json">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
 
   <title>
     {% block title %} Button {% endblock %}
@@ -23,8 +28,8 @@
 <body mb-0 pb-0>
   {% block navbar %}
   <nav class="navbar navbar-expand-md navbar-light fixed-top md-0 nav-bar-light">
+    <a class="navbar-brand" href="{{base_path}}/offset"><img class="button-logo" src="{{base_path}}/assets/img/button_logo.svg"></a>    
   {% endblock %}
-    <a class="navbar-brand" href="{{base_path}}/">Button</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,9 +38,6 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{{base_path}}/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Partners</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
