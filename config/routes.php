@@ -28,3 +28,7 @@ $routes->post('/offset/complete', function() {
   DefaultController::offset_complete();
 });
 
+$routes->post('/user/profile', function() {
+  AccountController::profile();
+});
+

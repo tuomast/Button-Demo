@@ -1,5 +1,5 @@
-html {
-	overflow: hidden;
+html { 
+	overflow:auto; 
 }
 
 body {
@@ -7,6 +7,12 @@ body {
 	color: #5a5a5a;
 	font-size:14px;
 	overflow: hidden;
+}
+
+
+.overflow-div {
+	overflow-y:auto; 
+    position:relative;
 }
 
 .button-logo {
@@ -386,12 +392,13 @@ body {
 	display: block;
 	justify-content: center;
 	max-width: 20rem;
-	margin: 10rem auto;
+	margin: 10vh auto;
+	overflow-y: auto;
 }
 
 .login-title {
 	text-align: center;
-	margin-bottom: 1.5em
+	margin-bottom: 1.5rem
 }
 
 .login-icon {
@@ -406,6 +413,20 @@ body {
 .login-button {
 	margin-top: 1.5em;
 	width: 100%;
+}
+
+.login-offset {
+	margin: auto;
+	margin-top: 18vh;
+}
+
+.login-offset-margin {
+	margin: auto;
+	margin-top: 22vh;
+}
+
+.error-wrap {
+	font-size: 110%;
 }
 
 .featurette {

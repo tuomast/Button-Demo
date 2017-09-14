@@ -118,7 +118,7 @@
                 $handle = $('.rangeslider__handle', this.$range);
                 updateHandle($handle[0], this.value);
                 $("#amount-label").html(this.value + "€" + '<span class="text-small text-muted value-month">/month</span>');
-                $("#value-flavor").val(flavor_array[this.value]);
+                $("#value-flavor").html(flavor_array[this.value]);
                 $("#demo-spaghetti").val(this.value);
             }
         }).on('input', function () {

@@ -12,6 +12,9 @@ class AccountController extends BaseController
         $params = $_POST;
         $account = Account::authenticate($params['email'], $params['password']);
         if (!$account) {
+            if ($_SESSION['offset'] = true) {
+                View::make('account/login.html', array('error' => 'Wrong username or password', 'email' => $params['email'], 'offset' => true));
+            }
             View::make('account/login.html', array('error' => 'Wrong username or password', 'email' => $params['email']));
         } else {
 			$_SESSION['account'] = $account->id;
@@ -21,10 +24,16 @@ class AccountController extends BaseController
     }
 
     public static function login() {
+        if ($_SESSION['offset'] = true) {
+            View::make('account/login.html', array('offset' => true));
+        }
         View::make('account/login.html');
 	}
 
 	public static function signup(){
+        if ($_SESSION['offset'] = true) {
+            View::make('account/signup.html', array('offset' => true));
+        }
 		View::make('account/signup.html');
 	}
 
@@ -52,8 +61,11 @@ class AccountController extends BaseController
             $account = Account::authenticate($account->name, $account->password);
             $_SESSION['account'] = $account->id;
             self::redirect();
-            Redirect::to('/', array('account_logged_in' => $account));
+            Redirect::to('/user/profile', array('account_logged_in' => $account));
         } else {
+            if ($_SESSION['offset'] = true) {
+                View::make('account/signup.html', array('errors' => $errors, 'attributes' => $attributes, 'offset' => true));
+            }
             View::make('account/signup.html', array('errors' => $errors, 'attributes' => $attributes));
         }
     }

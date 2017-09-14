@@ -1,13 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
-{% if errors %}
-<div class="alert alert-danger mt-5">
-    <ul>
-        {% for error in errors %}
-        <li>{{error}}</li>
-        {% endfor %}
-    </ul>
-</div>
+<div class="overflow-div">
+{% if offset %}
+	<div class="login-offset text-center">
+		<h1>Congratulations, you have offset!</h1>
+		<h4>You can view your certificates and achievements in your user profile.</h4>
+  </div>
+{% else %}
+<div class="login-offset-margin"></div>
 {% endif %}
 
 <div class="login-div">
@@ -36,8 +36,19 @@
       <span class="input-group-addon login-icon"><i class="fa fa-lock"></i></span>
       <input type="password" class="form-control" name="password2" placeholder="password again">
     </div>
-
+    {% if errors %}
+    <div class="error-wrap mt-2 mb-2">
+        <div class="alert alert-danger d-block text-center pb-0 mb-0">
+        <ul class="text-left">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    </div>
+    {% endif %}
     <button type="submit" class="btn btn-primary login-button">Sign up</button>
   </form>
+</div>
 </div>
 {% endblock %}

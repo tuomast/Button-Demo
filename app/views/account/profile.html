@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center">
+<h1 class="mt5">Newest achievements</h1>
+<div class="card-deck mt-5">
+	{% for achievement in achievements %}
+	<a class="deco-none" href="{{base_path}}/review/{{review.id}}/{{review.otsikko}}">
+		<div class="card">
+			<div class="card-header"><h5>{{achievement.name}}</h5></div>
+			<div class="image-container">
+				<img class="card-img-top img-responsive img-thumbnail" style="max-height:75vh;" {% if review.image == 'null' %}
+				src="{{base_path}}/assets/img/no_img.jpg"
+				{% else %}
+				src="{{review.image}}"
+				{% endif %} 
+				alt="there should probably be a picture here">
+				<h2 class="score-text">
+					<span class="score-span">{{review.score}}/5
+					</span>
+				</h2>
+			</div>
+			<div class="card-block">
+				<p class="card-text m-2 ml-3"><em>{{achievement.description}}</em></p>
+				<p class="card-text m-3"><small class="text-muted">{{achievement.time}}</small></p>
+			</div>
+		</div>
+	</a>
+	{% endfor %}
+</div>
+</div>
+{% endblock %}
