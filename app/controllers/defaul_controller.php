@@ -17,7 +17,7 @@ class DefaultController extends BaseController{
 			$_SESSION['offset_amount'] = $params['amount'];
 			Redirect::to('/signup');
 		}
-		DefaultController
+		Achievement::add_achievement_to_user(parent::get_account_id(), 1);
 		Redirect::to('/user/profile');
 	}
 }

@@ -72,9 +72,9 @@ class achievement extends BaseModel{
     $query->execute(array('name') => $name, 'description' => $description, 'logo_url' => $logo_url, 'levels' => $levels);
 	}
 	
-	public static function addAchievementToUser($userId, $achievementId) {
-    $query = DB:connection()->prepare('INSERT INTO Achievementaccount (user_id, achievement_id) VALUES (:user_id, :achievement_id)');
-    $query->execute(array('user_id' => $userId, 'achievement_id' => $achievementId);
+	public static function add_achievement_to_user($userId, $achievementId) {
+    $query = DB::connection()->prepare('INSERT INTO Achievementaccount (user_id, achievement_id, time_achieved) VALUES (:user_id, :achievement_id, now())');
+    $query->execute(array('user_id' => $userId, 'achievement_id' => $achievementId));
   }
 
   public static function addLevel() {

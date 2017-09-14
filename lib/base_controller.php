@@ -34,7 +34,7 @@ class BaseController
         }
     }
 
-    public static function returnAccountId() {
+    public static function get_account_id() {
         if (!isset($_SESSION['account'])) {
             return $_SESSION['account'];
         }

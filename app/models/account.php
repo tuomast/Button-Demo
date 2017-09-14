@@ -72,6 +72,11 @@ class Account extends BaseModel{
 		$this->id = $row['id'];
 	}
 
+	public static function increase_offset_amount($id, $amount){
+		$query = DB::connection()->prepare('UPDATE Account SET total_co2_tons_saved = total_co2_tons_saved + :tons, total_money_donated = total_money_donated + :amounts WHERE id = :id LIMIT 1');
+		$query->execute(array('tons' => ($amount / 5), 'amount' => $amount));
+	}
+
 	public function errors(){
 		$errors = array(
 			/* stuff for validating the values here

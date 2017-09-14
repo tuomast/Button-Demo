@@ -1,7 +1,6 @@
 <?php
 
-class AccountController extends BaseController
-{
+class AccountController extends BaseController {
 
     public static function list() {
         $accounts = Account::all();
@@ -12,7 +11,7 @@ class AccountController extends BaseController
         $params = $_POST;
         $account = Account::authenticate($params['email'], $params['password']);
         if (!$account) {
-            if ($_SESSION['offset'] = true) {
+            if ($_SESSION['offset'] == true) {
                 View::make('account/login.html', array('error' => 'Wrong username or password', 'email' => $params['email'], 'offset' => true));
             }
             View::make('account/login.html', array('error' => 'Wrong username or password', 'email' => $params['email']));
@@ -24,18 +23,28 @@ class AccountController extends BaseController
     }
 
     public static function login() {
-        if ($_SESSION['offset'] = true) {
+        if ($_SESSION['offset'] == true) {
             View::make('account/login.html', array('offset' => true));
         }
         View::make('account/login.html');
 	}
 
 	public static function signup(){
-        if ($_SESSION['offset'] = true) {
+        if ($_SESSION['offset'] == true) {
             View::make('account/signup.html', array('offset' => true));
         }
 		View::make('account/signup.html');
-	}
+    }
+  
+    public static function profile(){
+        if ($_SESSION['offset'] == true) {
+            $_SESSION['offset'] = false;
+            $_SESSION['offset_amount'] = $params['amount'];
+            Achievement::add_achievement_to_user(parent::get_account_id(), 1);
+        }
+        $achievements = null;
+        View::make('account/profile.html', array('achievements' => $achievements));
+    }
 
 	/* vaiheessa */
     public static function store() {
