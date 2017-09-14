@@ -77,8 +77,8 @@ class Account extends BaseModel{
 			/* stuff for validating the values here
 			*/
 			'email' => $this->validateEmail($this->email),
-			'first_name' => $this->validateName($this->first_name),
-			'last_name' => $this->validateName($this->last_name)
+			'first_name' => $this->validateName($this->first_name, "First name"),
+			'last_name' => $this->validateName($this->last_name, "Last name")
 
 		);
 		$errors = array_filter($errors);
@@ -92,11 +92,11 @@ class Account extends BaseModel{
 		return "Email is not valid.";
 	}
 
-	private function validateName($name) {
+	private function validateName($name, $variableName = "Name") {
 		if (preg_match("/^\p{Lu}[\p{L} '&-]*[\p{L}]$/u", $name)) {
 			return null;
 		}
-		return "Name is not valid";
+		return $variableName . " is not valid";
 	}
 	private function checkPassword($password, $account) {
 		$hash = $account->password;
