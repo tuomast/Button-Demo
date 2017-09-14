@@ -12,11 +12,12 @@ class DefaultController extends BaseController{
 
 	public static function offset_complete(){
 		$params = $_POST;
-		$_SESSION['offset_amount'] = $params['amount'];
 		if (parent::check_logged_in("/offset/complete") == false) { //saves the path for later use
 			$_SESSION['offset'] = true;
+			$_SESSION['offset_amount'] = $params['amount'];
 			Redirect::to('/signup');
 		}
+		DefaultController
 		Redirect::to('/user/profile');
 	}
 }

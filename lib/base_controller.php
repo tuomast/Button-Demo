@@ -18,8 +18,9 @@ class BaseController
     {
         if (!isset($_SESSION['account'])) {
             $_SESSION['redirect_url'] = $redirect_url;
-            Redirect::to('/login');
+            return false;
         }
+        return true;
     }
 
     public static function redirect()
@@ -30,6 +31,12 @@ class BaseController
                 $_SESSION['redirect_url'] = "";
                 Redirect::to($redirect_url);
             }
+        }
+    }
+
+    public static function returnAccountId() {
+        if (!isset($_SESSION['account'])) {
+            return $_SESSION['account'];
         }
     }
 
