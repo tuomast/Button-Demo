@@ -1,37 +1,34 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="text-center">
+<div class="text-center achievement-div">
 	<h1 class="mt5">Newest achievements</h1>
 	<div class="card-deck mt-5">
 		{% for achievement in achievements %}
 		<div class="card">
 			<div class="card-header">
-				<h5>{{achievement.name}}</h5>
+				<h3>{{achievement.name}}</h3>
 			</div>
 			<div class="image-container">
-				<img class="card-img-top img-responsive img-thumbnail" style="max-height:75vh;" src="{{achievement.logo_url}}" alt="there should probably be a picture here">
+				<img class="card-img-top img-responsive img-thumbnail" style="max-height:75vh;" src="{{base_path}}/assets/img/achievement.png" alt="there should probably be a picture here">
 			</div>
 			<div class="card-block">
-				<p class="card-text m-2 ml-3"><em>{{achievement.description}}</em></p>
-				<div class="mb-0 d-block" style="height: 15px;">
-					<p class="card-text m-3 float-right"><small class="text-muted">{{achievement.time_achieved}}</small></p>
-					<div class="fb-share-button d-inline-block float-left" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"
-					 data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+				<h5 class="card-text m-2 ml-3"><em>{{achievement.description}}</em></h5>
+				<div class="card-footer">
+					<p class="card-text m-3"><small class="text-muted">{{achievement.time_achieved}}</small></p>
+					<div class="a2a_kit a2a_default_style">
+						<a class="a2a_button_facebook"></a>
+						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_google_plus"></a>
+						<a class="a2a_button_pinterest"></a>
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+					</div>
 				</div>
 			</div>
-		</div>
+			</div>
 		{% endfor %}
 	</div>
 </div>
 
 <div id="fb-root"></div>
-<script>
-	(function (d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.10";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 {% endblock %}
