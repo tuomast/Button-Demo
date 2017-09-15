@@ -16,6 +16,10 @@ $routes->post('/login', function() {
   AccountController::handle_login();
 });
 
+$routes->get('/logout', function() {
+  AccountController::logout();
+});
+
 $routes->get('/signup', function() {
   AccountController::signup();
 });
@@ -28,7 +32,7 @@ $routes->post('/offset/complete', function() {
   DefaultController::offset_complete();
 });
 
-$routes->post('/user/profile', function() {
+$routes->get('/user/profile', function() {
   AccountController::profile();
 });
 

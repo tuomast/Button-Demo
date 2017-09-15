@@ -15,16 +15,16 @@
   <form method="post" action="{{base_path}}/signup">
 
     <div class="input-group login-field">
-      <span class="input-group-addon login-icon"><i class="fa fa-envelope"></i></span>
-      <input type="text" class="form-control" name="first_name" placeholder="First Name">
+      <span class="input-group-addon login-icon"><i class="fa fa-address-book"></i></span>
+      <input type="text" class="form-control" name="first_name" placeholder="first name" value="{{attributes.first_name}}">
+    </div>
+    <div class="input-group login-field">
+      <span class="input-group-addon login-icon"><i class="fa fa-address-book"></i></span>
+      <input type="text" class="form-control" name="last_name" placeholder="last name" value="{{attributes.last_name}}">
     </div>
     <div class="input-group login-field">
       <span class="input-group-addon login-icon"><i class="fa fa-envelope"></i></span>
-      <input type="text" class="form-control" name="last_name" placeholder="Last Name">
-    </div>
-    <div class="input-group login-field">
-      <span class="input-group-addon login-icon"><i class="fa fa-envelope"></i></span>
-      <input type="text" class="form-control" name="email" placeholder="email" value="{{email}}">
+      <input type="text" class="form-control" name="email" placeholder="email" value="{{attributes.email}}">
     </div>
 
     <div class="input-group login-field">

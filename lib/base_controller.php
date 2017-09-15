@@ -34,9 +34,26 @@ class BaseController
         }
     }
 
-    public static function get_account_id() {
-        if (!isset($_SESSION['account'])) {
-            return $_SESSION['account'];
+    public static function create_achievement()
+    {
+        if (isset($_SESSION['account'])) {
+            if ($_SESSION['offset'] == true) {
+                $_SESSION['offset'] == false;
+                Achievement::add_achievement_to_user($_SESSION['account'], 1);
+                Achievement::add_achievement_to_user($_SESSION['account'], 2);
+                Achievement::add_achievement_to_user($_SESSION['account'], 3);
+            }
+        }
+    }
+
+    public static function increase_offset()
+    {
+        if (isset($_SESSION['account'])) {
+            if ($_SESSION['amount'] > 0) {
+                Account::increase_offset_amount($_SESSION['account'], $_SESSION['amount']);
+                Globalstats::increase_carbon($_SESSION['amount']);
+                $_SESSION['amount'] = 0;
+            }
         }
     }
 
@@ -49,5 +66,9 @@ class BaseController
             }
         }
         return 0;
+    }
+
+    public static function get_carbon() {
+        return Globalstats::get_carbon();
     }
 }

@@ -24,7 +24,7 @@ CREATE TABLE Achievement(
 	id SERIAL PRIMARY KEY,
 	name varchar(200),
 	description varchar(1000),
-	logo_url varchar(500),
+	logo_url varchar(500) DEFAULT 'def',
 
 	/* for achievements with multiple levels. 5-level example: share 5
 	times on social media to get this achievement*/

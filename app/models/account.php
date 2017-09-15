@@ -4,7 +4,7 @@ class Account extends BaseModel{
 
 	public $id, $email, $password, $first_name, $last_name, $phone_number;
 
-	public function __construct($attributes){
+	public function __construct($attributes) {
 		parent::__construct($attributes);
 	}
 
@@ -73,8 +73,8 @@ class Account extends BaseModel{
 	}
 
 	public static function increase_offset_amount($id, $amount){
-		$query = DB::connection()->prepare('UPDATE Account SET total_co2_tons_saved = total_co2_tons_saved + :tons, total_money_donated = total_money_donated + :amounts WHERE id = :id LIMIT 1');
-		$query->execute(array('tons' => ($amount / 5), 'amount' => $amount));
+		$query = DB::connection()->prepare('UPDATE Account SET total_co2_tons_saved = total_co2_tons_saved + :tons, total_money_donated = total_money_donated + :amount WHERE id = :id');
+		$query->execute(array('tons' => ($amount / 5), 'amount' => $amount, 'id' => $id));
 	}
 
 	public function errors(){

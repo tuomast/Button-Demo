@@ -7,17 +7,16 @@ class DefaultController extends BaseController{
 	}
 
 	public static function offset(){
-		View::make('offset/subscribe.html', array('account_logged_in' => self::get_account_logged_in()));
+		View::make('offset/subscribe.html', array('account_logged_in' => self::get_account_logged_in(), 'carbon' => self::get_carbon()));
 	}
 
 	public static function offset_complete(){
 		$params = $_POST;
+		$_SESSION['amount'] = $params['amount'];
+		$_SESSION['offset'] = true;
 		if (parent::check_logged_in("/offset/complete") == false) { //saves the path for later use
-			$_SESSION['offset'] = true;
-			$_SESSION['offset_amount'] = $params['amount'];
 			Redirect::to('/signup');
 		}
-		Achievement::add_achievement_to_user(parent::get_account_id(), 1);
 		Redirect::to('/user/profile');
 	}
 }

@@ -61,4 +61,8 @@ class BaseModel{
     }
     return null;
   }
+
+  public static function get_carbon() {
+    return Globalstats::get_carbon();
+  }
 }

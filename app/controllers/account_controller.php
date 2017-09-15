@@ -16,9 +16,14 @@ class AccountController extends BaseController {
             }
             View::make('account/login.html', array('error' => 'Wrong username or password', 'email' => $params['email']));
         } else {
-			$_SESSION['account'] = $account->id;
-			self::redirect();
-            Redirect::to('/user/profile');
+            $_SESSION['account'] = $account->id;
+            if ($_SESSION['offset'] == true) {
+                self::create_achievement();
+                self::increase_offset();
+                Redirect::to('/user/profile');
+            } else {
+                Redirect::to('/offset');
+            }
         }
     }
 
@@ -35,15 +40,22 @@ class AccountController extends BaseController {
         }
 		View::make('account/signup.html');
     }
+
+    public static function logout(){
+		$_SESSION['account'] = null;
+		Redirect::to('/');
+	}
   
     public static function profile(){
-        if ($_SESSION['offset'] == true) {
-            $_SESSION['offset'] = false;
-            $_SESSION['offset_amount'] = $params['amount'];
-            Achievement::add_achievement_to_user(parent::get_account_id(), 1);
+        if (!isset($_SESSION['account'])) {
+            Redirect::to('/login');
         }
-        $achievements = null;
-        View::make('account/profile.html', array('achievements' => $achievements));
+        if ($_SESSION['offset'] == true) {
+            self::create_achievement();
+            self::increase_offset();
+        }
+        $achievements = Achievement::find_for_user($_SESSION['account']);
+        View::make('account/profile.html', array('achievements' => $achievements, 'account_logged_in' => self::get_account_logged_in()));
     }
 
 	/* vaiheessa */
@@ -67,10 +79,14 @@ class AccountController extends BaseController {
         $errors = array_merge($errors, $account->errors());
         if (count($errors) == 0) {
             $account->save();
-            $account = Account::authenticate($account->name, $account->password);
             $_SESSION['account'] = $account->id;
-            self::redirect();
-            Redirect::to('/user/profile', array('account_logged_in' => $account));
+            if ($_SESSION['offset'] == true) {
+                self::create_achievement();
+                self::increase_offset();
+                Redirect::to('/user/profile');
+            } else {
+                Redirect::to('/offset');
+            }
         } else {
             if ($_SESSION['offset'] = true) {
                 View::make('account/signup.html', array('errors' => $errors, 'attributes' => $attributes, 'offset' => true));
