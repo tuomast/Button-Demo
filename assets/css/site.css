@@ -16,7 +16,7 @@ body {
 }
 
 .button-logo {
-	height: 35px;
+	height: 30px;
 }
 
 .nav-bar-dark {
@@ -501,7 +501,7 @@ body {
 
 @media screen and (orientation:landscape) {
 	.lead-div {
-		top: 25vh;
+		top: 20vh;
 	}
 }
 
@@ -513,12 +513,12 @@ body {
 
 @media screen and (orientation:landscape) and (max-height: 600px) {
 	.lead-div {
-		top: 15vh;
+		top: 10vh;
 	}
 }
 
 @media screen and (orientation:landscape) and (max-height: 800px) {
 	.lead-div {
-		top: 15vh;
+		top: 12vh;
 	}
 }
