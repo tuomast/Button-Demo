@@ -447,10 +447,11 @@ body {
 	font-size: 50px;
 	color: rgba(223, 223, 223, 0.80);
 	font-size: calc(2.5rem + 0.5vw);
+	margin-bottom: 1.5rem;
 }
 
 .featurette-heading-off {
-	color: rgba(223, 12, 244, 0.95)
+	color: rgba(223, 12, 244, 0.95);
 }
 
 .information-lead {

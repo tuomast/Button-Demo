@@ -39,32 +39,35 @@
 			</div>
 			<div class="information-div">
 				<div class="row featurette">
-					<div class="col-md-7 information-bit">
+					<div class="col-md-7 information-bit text-justify">
 						<span class="information-highlight"><h2 class="featurette-heading mt-2">Global Warming. <span class="featurette-heading-off">Inevitable.</span></h2>
 						</span>
-						<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
+						<span class="information-highlight"><p class="information-lead">Carbon dioxide (CO2) is the leading cause of global warming, and the excessive CO2 cloud is at least 800 000 million tonnes in size. Annually we add over 15 000 million tonnes of CO2 emissions to that cloud.</p>
+						<p class="information-lead">We are living our lives being aware that our planet is not doing well. Most of us wish there would be an easy way to create a green handprint for the future generations. Best impact is gained from restoring the carbon sinks (such as mangrove forests), and adapting cleantech -certified work aligned with the UN global development goals.</p></span>
 					</div>
 				</div>
 
 				<div class="featurette-divider">
 
-				<div class="row featurette justify-content-end">
+				<div class="row featurette justify-content-end text-justify">
 					<div class="col-md-7 information-bit">
 						<span class="information-highlight"><h2 class="featurette-heading mt-2">How do we stop it? <span class="featurette-heading-off">Just push the Button.</span></h2>
 						</span>
-						<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
+						<span class="information-highlight"><p class="information-lead">Restoring the damaged ecosystems holds estimated potential of over 3 000 000 million tonnes of CO2, which is 3 times more than the accumulated excessive CO2 in the atmosphere.</p></span>
 					</div>
 				</div>
 
 				<div class="featurette-divider">
 
 				<div class="row featurette">
-					<div class="col-md-7 information-bit">
+					<div class="col-md-7 information-bit text-justify">
 							<span class="information-highlight"><h2 class="featurette-heading mt-2">Transparent and secure. <span class="featurette-heading-off">Certified.</span></h2></span>
-							<span class="information-highlight"><p class="information-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-							cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></span>
+							<span class="information-highlight"><p class="information-lead">Communities in Indonesia are replanting mangrove forests. For each certified CO2 ton they receive a 10€ donation, and this money is used to save at least another ton of CO2. This is a growing loop of continuous development.</p>			
+								<p class="information-lead">Guaranteed impact per 10€ donation:
+								<ul class="information-lead">
+									<li>1 ton CO2 (Replanting 0.02-0.2 ha of forest)</li>
+									<li>$30 economic benefit, mainly to the local community</li>
+								</ul></p></span>
 					</div>
 				</div>
 			</div>
@@ -88,21 +91,23 @@
 			setInterval(function () {
 				$(".information-background-div").height($(".information-div").prop('scrollHeight'));
 			}, 1000);
-
+			var $activeText = $("#fade-text");
 			$(function startFader() {
 				text_fader = setInterval(function () {
-					selector++;
-					if (selector == heading_array.length) {
-						selector = 0;
+					if( $activeText.queue('fx').length == 0 ) {
+						selector++;
+						if (selector == heading_array.length) {
+							selector = 0;
+						}
+						$('#fade-text').fadeOut(2000);
+						setTimeout(
+							function () {
+								$('#fade-text').addClass("invisible");
+								$('#fade-text').text(heading_array[selector]);
+								$('#fade-text').removeClass("invisible");
+								$('#fade-text').fadeIn(1000);
+							}, 1900);
 					}
-					$('#fade-text').fadeOut(2000);
-					setTimeout(
-						function () {
-							$('#fade-text').addClass("invisible");
-							$('#fade-text').text(heading_array[selector]);
-							$('#fade-text').removeClass("invisible");
-							$('#fade-text').fadeIn(1000);
-						}, 1900);
 				}, 6000);
 			});
 			function stopFader() {
