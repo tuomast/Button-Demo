@@ -1,7 +1,6 @@
 <?php
-//copy this file and rename it as "database.php" to prevent github from overwriting it
   class DatabaseConfig{
-
+    //copy this file and rename it as "database.php" to prevent github from overwriting it
     private static $use_database = 'psql';
     private static $connection_config = array(
       'psql' => array(
