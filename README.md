@@ -1,1 +1,1 @@
-Button: helping people reduce their carbon emissios
+A WIP demo for the Button project. Helping people reduce their carbon emissions.
