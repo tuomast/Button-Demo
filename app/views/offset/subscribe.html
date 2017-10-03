@@ -25,7 +25,7 @@
                     </div>
                     <div class="offset-text-container pl-4 pr-4 pb-5 mb-5 text-justify">
                         <p class="offset-text d-inline mb-4">
-                            Carbon dioxide emissions are the leading cause of global warming. As little as <span class="d-inline-block"><b class"d-inline-block">5 euros</b></span>                            a month is enough to compensate for the average of <b>1000kg</b> of monthly emissions you create
+                            Carbon dioxide emissions are the leading cause of global warming. As little as <span class="d-inline-block"><b class"d-inline-block">10 euros</b></span>                            a month is enough to compensate for the average of <b>1000kg</b> of monthly emissions you create
                             living your daily life. <em>Being able to say you are 100% carbon neutral couldn't
                         be easier than this.</em>
                         </p>
@@ -34,7 +34,7 @@
                         <h1 class="mt-5 pt-5 pb-3">Choose your donation</h1>
                         <div class="d-block mt-4 ml-3 mr-3">
                             <div class="col-xs-10 col-xs-offset-1">
-                                <input id="range-slider" type="range" min="1" max="50" step="1" value="5">
+                                <input id="range-slider" type="range" min="1" max="50" step="1" value="10">
                             </div>
                         </div>
                         <div class="argh m-auto">
@@ -46,7 +46,7 @@
                                     </span>
                                 </div>
                                 <div class="col slider-mini mt-1">
-                                    <span class="h1 text-right full-price float-right pt-4" id="amount-label">5€
+                                    <span class="h1 text-right full-price float-right pt-4" id="amount-label">10€
                                     <span class="text-small text-muted value-month">/month</span>
                                     </span>
                                 </div>
@@ -56,7 +56,7 @@
                     <hr>
                     <div class="offset-button mt-5 text-center">
                         <form action="{{base_path}}/offset/complete" method="post">
-                            <input id="demo-spaghetti" class="d-none" type="text" name="amount" value="lol"></input>
+                            <input id="demo-spaghetti" class="d-none" type="text" name="amount" value="10"></input>
                             <input type="image" value="Submit" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-pill-paypalcheckout-60px.png"
                                 alt="PayPal Checkout" />
                         </form>
@@ -83,7 +83,7 @@
 </script>
 <script>
     $(document).ready(function () {
-        $("#fadein-text").text("Know you have made a difference.").hide().fadeIn(5000);
+        $("#fadein-text").text("Start creating a green handprint.").hide().fadeIn(5000);
 
         // For slider and flavor text under it
         var $element = $('input[type="range"]');
@@ -106,7 +106,7 @@
             100: "a night of bar-hopping"
         };
         var timer = null;
-        var index = 5;
+        var index = 10;
 
         // Fixing the background height
         $(".offset-background").height($(".offset-container").prop('scrollHeight'));
