@@ -4,12 +4,15 @@
     "require": {
         "components/font-awesome": "^4.7",
         "slim/slim": "^3.8",
-        "twig/twig": "^2.4"
+        "twig/twig": "^2.4",
+        "nategood/httpful": "*",
+        "stripe/stripe-php": "*"
+
     },
 	"autoload": {
 		"classmap": [
-			"config/database.php",
-			"lib",
+			"config/database.php", "config/config.php",
+            "lib",
 			"app/controllers",
 			"app/models"
 		]

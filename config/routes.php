@@ -36,3 +36,17 @@ $routes->get('/user/profile', function() {
   AccountController::profile();
 });
 
+$routes->get('/spending', function() {
+    DefaultController::spending();
+});
+
+$routes->get('/api/accounts', function( $request, $response) {
+
+    return DefaultController::accounts( $request, $response );
+});
+
+$routes->get('/api/accounts/{accountId}/transactions', function( $request, $response,$args) {
+
+    return DefaultController::transactions( $request, $response, $args["accountId"] );
+});
+

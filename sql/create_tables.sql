@@ -1,3 +1,5 @@
+
+
 CREATE TABLE Account(
 	id SERIAL PRIMARY KEY,
   	email varchar(255) NOT NULL,

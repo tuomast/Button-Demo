@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div ng-app="spending" class="button-div" style="margin-top: 100px; margin-left: 100px;">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Button Program</h1>
+            <p>Understand your spending, build wealth and make impact for the environment</p>
+            <div ng-view></div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block body %}
+<script src="http://code.angularjs.org/angular-1.0.1.js"></script>
+<script src="{{base_path}}/assets/js/config.js"></script>
+<script src="{{base_path}}/assets/js/spendingapp.js"></script>
+{% endblock %}
